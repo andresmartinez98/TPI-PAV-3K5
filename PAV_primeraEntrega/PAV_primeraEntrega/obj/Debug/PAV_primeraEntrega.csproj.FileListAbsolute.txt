@@ -1,0 +1,12 @@
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\bin\Debug\PAV_primeraEntrega.exe.config
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\bin\Debug\PAV_primeraEntrega.exe
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\bin\Debug\PAV_primeraEntrega.pdb
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\obj\Debug\PAV_primeraEntrega.csprojAssemblyReference.cache
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\obj\Debug\PAV_primeraEntrega.Properties.Resources.resources
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\obj\Debug\PAV_primeraEntrega.csproj.GenerateResource.cache
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\obj\Debug\PAV_primeraEntrega.csproj.CoreCompileInputs.cache
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\obj\Debug\PAV_primeraEntrega.exe
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\obj\Debug\PAV_primeraEntrega.pdb
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\obj\Debug\PAV_primeraEntrega.visuales.Form2.resources
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\obj\Debug\PAV_primeraEntrega.visuales.Form3.resources
+C:\Users\Lucian\Desktop\Pupi facultad\PAV\TP\PAV_primeraEntrega\PAV_primeraEntrega\obj\Debug\PAV_primeraEntrega.FormLogin.resources

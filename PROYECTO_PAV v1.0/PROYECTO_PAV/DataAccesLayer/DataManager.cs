@@ -99,23 +99,6 @@ public class DataManager : IDisposable
         return rtdo;
     }
 
-    public object ConsultaSQLScalar(string strSql)
-    {
-        SqlCommand cmd = new SqlCommand();
-        try
-        {
-            cmd.Connection = dbConnection;
-            cmd.CommandType = CommandType.Text;
-         
-            cmd.CommandText = strSql;
-            return cmd.ExecuteScalar();
-        }
-        catch (SqlException ex)
-        {
-            throw (ex);
-        }
-    }
-
     public void Dispose()
     {
         this.Close();

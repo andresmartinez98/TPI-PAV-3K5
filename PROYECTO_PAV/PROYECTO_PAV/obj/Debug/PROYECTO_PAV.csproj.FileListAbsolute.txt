@@ -1,0 +1,49 @@
+C:\Users\Lucian\source\repos\Pav\BienHecho\PROYECTO_PAV\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.exe.config
+C:\Users\Lucian\source\repos\Pav\BienHecho\PROYECTO_PAV\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.exe
+C:\Users\Lucian\source\repos\Pav\BienHecho\PROYECTO_PAV\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.pdb
+C:\Users\Lucian\source\repos\Pav\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.FormLogin.resources
+C:\Users\Lucian\source\repos\Pav\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.Properties.Resources.resources
+C:\Users\Lucian\source\repos\Pav\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csproj.GenerateResource.cache
+C:\Users\Lucian\source\repos\Pav\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csproj.CoreCompileInputs.cache
+C:\Users\Lucian\source\repos\Pav\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.exe
+C:\Users\Lucian\source\repos\Pav\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.pdb
+C:\Users\Lucian\source\repos\Pav\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csprojAssemblyReference.cache
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.exe.config
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.exe
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.pdb
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csprojAssemblyReference.cache
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.Properties.Resources.resources
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csproj.GenerateResource.cache
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csproj.CoreCompileInputs.cache
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.exe
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.pdb
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.frmLogin.resources
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.frmPrincipal.resources
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.frmGestionCurso.resources
+C:\Users\Lucian\Documents\GitHub\TPI-PAV-3K5\BienHecho\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.GUILayer.frmAMBCCurso.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.exe.config
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.exe
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.pdb
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csprojAssemblyReference.cache
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.GUILayer.frmAMBCCurso.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.frmLogin.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.frmGestionCurso.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.frmPrincipal.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.Properties.Resources.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csproj.GenerateResource.cache
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csproj.CoreCompileInputs.cache
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.exe
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.pdb
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.exe.config
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.exe
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\bin\Debug\PROYECTO_PAV.pdb
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csprojAssemblyReference.cache
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.GUILayer.frmAMBCCurso.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.frmLogin.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.frmGestionCurso.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.frmPrincipal.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.Properties.Resources.resources
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csproj.GenerateResource.cache
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.csproj.CoreCompileInputs.cache
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.exe
+A:\Facultad\Tercer Año\Programación de Aplicaciones Visuales I\TP\PROYECTO_PAV v1.0\TPI-PAV-3K5\PROYECTO_PAV v1.0\PROYECTO_PAV\obj\Debug\PROYECTO_PAV.pdb

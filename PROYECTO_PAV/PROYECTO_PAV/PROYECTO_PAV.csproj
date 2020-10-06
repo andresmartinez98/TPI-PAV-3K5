@@ -48,10 +48,12 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\CategoriaService.cs" />
     <Compile Include="BusinessLayer\CursoService.cs" />
+    <Compile Include="BusinessLayer\ObjetivoService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccesLayer\CategoriaDao.cs" />
     <Compile Include="DataAccesLayer\CursoDao.cs" />
     <Compile Include="DataAccesLayer\DataManager.cs" />
+    <Compile Include="DataAccesLayer\ObjetivoDao.cs" />
     <Compile Include="DataAccesLayer\UsuarioDao.cs" />
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Curso.cs" />
@@ -59,11 +61,35 @@
     <Compile Include="Entities\Perfil.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Entities\UsuarioCurso.cs" />
+    <Compile Include="GUILayer\FormGestionObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FormGestionObjetivos.Designer.cs">
+      <DependentUpon>FormGestionObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmABMCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMCategorias.Designer.cs">
+      <DependentUpon>frmABMCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmABMObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMObjetivos.Designer.cs">
+      <DependentUpon>frmABMObjetivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\frmAMBCCurso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUILayer\frmAMBCCurso.Designer.cs">
       <DependentUpon>frmAMBCCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmGestionCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmGestionCategoria.Designer.cs">
+      <DependentUpon>frmGestionCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\frmLogin.cs">
       <SubType>Form</SubType>
@@ -85,8 +111,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\FormGestionObjetivos.resx">
+      <DependentUpon>FormGestionObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmABMCategorias.resx">
+      <DependentUpon>frmABMCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmABMObjetivos.resx">
+      <DependentUpon>frmABMObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmAMBCCurso.resx">
       <DependentUpon>frmAMBCCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmGestionCategoria.resx">
+      <DependentUpon>frmGestionCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

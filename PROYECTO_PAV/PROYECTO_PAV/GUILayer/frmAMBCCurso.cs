@@ -25,7 +25,6 @@ namespace PROYECTO_PAV.GUILayer
             InitializeComponent();
             oCursoService = new CursoService();
             oCategoriaService = new CategoriaService();
-
         }
 
         public enum FormMode
@@ -72,18 +71,16 @@ namespace PROYECTO_PAV.GUILayer
                         break;
                     }
             }
-
         }
 
         private void MostrarDatos()
         {
             if (oCursoSelected != null)
-            {
-                  
+            {                  
                 txtNombre.Text = oCursoSelected.Nombre;
                 txtDescripcion.Text = oCursoSelected.Descripcion;
                 txtFecha.Text = oCursoSelected.FechaVigencia.ToString("MM/dd/yyyy");
-                cmbCategoria.Text = oCursoSelected.Categoria.Nombre;              
+                cmbCategoria.Text = oCursoSelected.Categoria.Nombre;            
 
             }
         }
@@ -103,7 +100,6 @@ namespace PROYECTO_PAV.GUILayer
 
         private void btnAceptar_Click(System.Object sender, System.EventArgs e)
         {
-
             switch (formMode)
             {
                 case FormMode.nuevo:

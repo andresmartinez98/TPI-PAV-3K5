@@ -16,6 +16,8 @@ namespace PROYECTO_PAV.Entities
 
         public string Descripcion { get; set; }
 
+        public bool Borrado { get; set; }
+
         public DateTime FechaVigencia { get; set; }
 
         public Categoria Categoria { get; set; }
@@ -31,5 +33,8 @@ namespace PROYECTO_PAV.Entities
         {
             return Nombre ;
         }
+
+        
+
     }
 }

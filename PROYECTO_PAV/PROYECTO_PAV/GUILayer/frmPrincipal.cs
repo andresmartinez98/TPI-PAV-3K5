@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROYECTO_PAV.GUILayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,12 +12,7 @@ using System.Windows.Forms;
 namespace PROYECTO_PAV
 {
     public partial class frmPrincipal : Form
-    {
-        
-
-        
-        
-        
+    {  
         public frmPrincipal()
         {
             InitializeComponent();
@@ -40,6 +36,18 @@ namespace PROYECTO_PAV
         {
             frmGestionCurso frmDetalle = new frmGestionCurso();
             frmDetalle.ShowDialog();
+        }
+
+        private void consultarCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGestionCategoria frmCategoria = new frmGestionCategoria();
+            frmCategoria.ShowDialog();
+        }
+
+        private void consultarObjetivosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGestionObjetivos frmObjetivo = new FormGestionObjetivos();
+            frmObjetivo.ShowDialog();
         }
     }
 }

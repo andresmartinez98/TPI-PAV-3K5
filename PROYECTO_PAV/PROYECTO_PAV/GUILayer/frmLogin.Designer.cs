@@ -66,7 +66,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(25, 288);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 44);
+            this.label6.Size = new System.Drawing.Size(209, 56);
             this.label6.TabIndex = 8;
             this.label6.Text = "UTN FRC";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -88,7 +88,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Location = new System.Drawing.Point(391, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 58);
+            this.label1.Size = new System.Drawing.Size(222, 74);
             this.label1.TabIndex = 1;
             this.label1.Text = "LOGIN";
             // 
@@ -99,7 +99,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label2.Location = new System.Drawing.Point(230, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(505, 13);
+            this.label2.Size = new System.Drawing.Size(671, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "---------------------------------------------------------------------------------" +
     "--------------------------------------------------------------------------------" +
@@ -112,7 +112,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label3.Location = new System.Drawing.Point(271, 126);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 33);
+            this.label3.Size = new System.Drawing.Size(157, 42);
             this.label3.TabIndex = 3;
             this.label3.Text = "Usuario:";
             // 
@@ -123,7 +123,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label4.Location = new System.Drawing.Point(230, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(505, 13);
+            this.label4.Size = new System.Drawing.Size(671, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "---------------------------------------------------------------------------------" +
     "--------------------------------------------------------------------------------" +
@@ -136,7 +136,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label5.Location = new System.Drawing.Point(227, 201);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(173, 33);
+            this.label5.Size = new System.Drawing.Size(222, 42);
             this.label5.TabIndex = 5;
             this.label5.Text = "Contraseña:";
             // 
@@ -146,7 +146,7 @@
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(401, 128);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(320, 31);
+            this.txtUsuario.Size = new System.Drawing.Size(320, 37);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -157,7 +157,7 @@
             this.txtPassword.Location = new System.Drawing.Point(401, 201);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(320, 31);
+            this.txtPassword.Size = new System.Drawing.Size(320, 37);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 

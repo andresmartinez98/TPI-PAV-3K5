@@ -20,7 +20,9 @@ namespace PROYECTO_PAV.DataAccesLayer
                                             "        c.descripcion, ",
                                             "        c.fecha_vigencia, ",
                                             "        c.id_categoria , ",
+                                            "        c.borrado , ",      
                                             "        k.nombre as 'nombreCat'  ",
+                                            
                                             " FROM Cursos c",
                                             " INNER JOIN Categorias k ON c.id_categoria = k.id_categoria ",
                                             " WHERE c.borrado = 0 ");
@@ -42,6 +44,7 @@ namespace PROYECTO_PAV.DataAccesLayer
                 oCurso.Nombre = row["nombre"].ToString();
                 oCurso.Descripcion = row["descripcion"].ToString();
                 oCurso.FechaVigencia = Convert.ToDateTime(row["fecha_vigencia"].ToString());
+                oCurso.Borrado = Convert.ToBoolean(row["borrado"].ToString());
                              
                 oCurso.Categoria = new Categoria();
 
@@ -60,7 +63,8 @@ namespace PROYECTO_PAV.DataAccesLayer
                                        "        c.descripcion, ",
                                        "        c.fecha_vigencia, ", 
                                        "        a.nombre as nombreCat, ", 
-                                       "        c.id_categoria ",
+                                       "        c.id_categoria, ",
+                                       "        c.borrado ",
                                        " FROM Cursos c ",
                                        " INNER JOIN Categorias a on (a.id_categoria = c.id_categoria) ",
                                        " WHERE 1 = 1 " );
@@ -73,9 +77,9 @@ namespace PROYECTO_PAV.DataAccesLayer
 
             if (parametros.ContainsKey("fecha_vigencia"))
                 strSql += " AND (c.fecha_vigencia <= @fecha_vigencia ) ";
-           
-            strSql += " AND c.borrado=0 AND a.borrado=0 ";
 
+            if (parametros.ContainsKey("borrado"))
+                strSql += " AND (c.borrado=@borrado) ";
         
             var resultado = (DataRowCollection) DataManager.GetInstance().ConsultaSQL(strSql, parametros).Rows;
 
@@ -95,6 +99,7 @@ namespace PROYECTO_PAV.DataAccesLayer
                                             "        c.descripcion, ",
                                             "        c.fecha_vigencia, ",
                                             "        c.id_categoria , ",
+                                            "        c.borrado , ",
                                             "        k.nombre as 'nombreCat'  ",
                                             " FROM Cursos c",
                                             " INNER JOIN Categorias k ON c.id_categoria = k.id_categoria ",

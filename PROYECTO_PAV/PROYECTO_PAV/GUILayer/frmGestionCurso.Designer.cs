@@ -41,11 +41,16 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.chkBorrado = new System.Windows.Forms.CheckBox();
+            this.lblColumnas = new System.Windows.Forms.Label();
+            this.lblCursos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurso)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cmbCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCategoria.FormattingEnabled = true;
             resources.ApplyResources(this.cmbCategoria, "cmbCategoria");
             this.cmbCategoria.Name = "cmbCategoria";
@@ -91,6 +96,7 @@
             this.dgvCurso.Name = "dgvCurso";
             this.dgvCurso.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurso_CellClick);
             this.dgvCurso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurso_CellContentClick);
+            this.dgvCurso.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCurso_CellFormatting);
             // 
             // btnConsultar
             // 
@@ -127,11 +133,34 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // chkBorrado
+            // 
+            resources.ApplyResources(this.chkBorrado, "chkBorrado");
+            this.chkBorrado.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.chkBorrado.Name = "chkBorrado";
+            this.chkBorrado.UseVisualStyleBackColor = true;
+            this.chkBorrado.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // lblColumnas
+            // 
+            resources.ApplyResources(this.lblColumnas, "lblColumnas");
+            this.lblColumnas.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lblColumnas.Name = "lblColumnas";
+            // 
+            // lblCursos
+            // 
+            resources.ApplyResources(this.lblCursos, "lblCursos");
+            this.lblCursos.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lblCursos.Name = "lblCursos";
+            // 
             // frmGestionCurso
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.Controls.Add(this.lblCursos);
+            this.Controls.Add(this.lblColumnas);
+            this.Controls.Add(this.chkBorrado);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
@@ -169,5 +198,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.CheckBox chkBorrado;
+        private System.Windows.Forms.Label lblColumnas;
+        private System.Windows.Forms.Label lblCursos;
     }
 }

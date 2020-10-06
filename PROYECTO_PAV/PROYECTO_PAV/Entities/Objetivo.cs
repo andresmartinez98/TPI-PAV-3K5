@@ -16,6 +16,8 @@ namespace PROYECTO_PAV.Entities
 
         public string NombreLargo { get; set; }
 
+        public bool Borrado { get; set; }
+
         public Objetivo() 
         {
         

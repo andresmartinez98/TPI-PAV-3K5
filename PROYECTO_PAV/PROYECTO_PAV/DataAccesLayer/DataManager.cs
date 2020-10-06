@@ -53,12 +53,10 @@ public class DataManager : IDisposable
 
             if (prs != null)
             {
-               
                 foreach (var item in prs)
                 {                   
                     cmd.Parameters.AddWithValue(item.Key, item.Value);
-                }
-               
+                }               
             }
 
             tabla.Load(cmd.ExecuteReader());

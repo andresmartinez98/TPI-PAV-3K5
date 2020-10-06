@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PROYECTO_PAV.BusinessLayer
 {
-   public class CategoriaService
+    public class CategoriaService
     {
         private CategoriaDao oCategoriaDao;
         public CategoriaService()
@@ -21,6 +21,31 @@ namespace PROYECTO_PAV.BusinessLayer
             return oCategoriaDao.GetAll();
         }
 
+        public IList<Categoria> ConsultarCategoriaConFiltros(Dictionary<string, object> parametros)
+        {
+            return oCategoriaDao.GetCategoriasByFilters(parametros);
+        }
 
+        internal object ObtenerCategorias(string categoria)
+        {
+            return oCategoriaDao.GetCategoria(categoria);
+
+        }
+
+        internal bool CrearCategoria(Categoria oCategoria)
+        {
+            return oCategoriaDao.Create(oCategoria);
+
+        }
+        internal bool ActualizarCategoria(Categoria oCategoria)
+        {
+
+            return oCategoriaDao.Update(oCategoria);
+        }
+        internal bool EliminarCategoria(Categoria oCategoria)
+        {
+            return oCategoriaDao.Delete(oCategoria);
+
+         }
     }
 }

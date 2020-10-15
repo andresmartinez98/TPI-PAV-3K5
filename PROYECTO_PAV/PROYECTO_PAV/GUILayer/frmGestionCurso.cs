@@ -50,7 +50,7 @@ namespace PROYECTO_PAV
             dgvCurso.Columns[4].Name = "Estado";
             dgvCurso.Columns[4].DataPropertyName = "borrado";
 
-            //dgvCurso.Columns[4].Visible = false;
+            dgvCurso.Columns[4].Width = 0;
 
             dgvCurso.AutoResizeColumnHeadersHeight();
             dgvCurso.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
@@ -132,7 +132,7 @@ namespace PROYECTO_PAV
                      
             else
             {
-                lblCursos.Text = "Cursos Recuperadas: " + Convert.ToString(dgvCurso.Rows.Count);
+                lblCursos.Text = "Cursos Recuperados: " + Convert.ToString(dgvCurso.Rows.Count);
 
             }
 
@@ -156,8 +156,7 @@ namespace PROYECTO_PAV
             try
             {
                 if (Convert.ToBoolean(this.dgvCurso.Rows[e.RowIndex].Cells["Estado"].Value.ToString()) == true)
-                    {
-                        dgvCurso.Columns[4].Visible = true;
+                    {                        
                         btnEditar.Enabled = false;
                         btnQuitar.Enabled = false;                        
                 }
@@ -207,8 +206,7 @@ namespace PROYECTO_PAV
                 if (Convert.ToBoolean(e.Value) == true)
                 {
                     e.CellStyle.BackColor = Color.DarkGray;
-                    dgvCurso.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkGray;
-                    //dgvCurso.Columns[4].Visible = false;
+                    dgvCurso.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkGray;                    
                 }                    
                     
             }

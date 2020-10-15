@@ -37,21 +37,17 @@ namespace PROYECTO_PAV.GUILayer
             columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
             
             dgvCategoria.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-            dgvCategoria.Columns[1].Name = "Descripcion";
-            dgvCategoria.Columns[1].DataPropertyName = "descripcion";
+            
             dgvCategoria.Columns[0].Name = "Nombre";
             dgvCategoria.Columns[0].DataPropertyName = "nombre";
-
+            dgvCategoria.Columns[1].Name = "Descripcion";
+            dgvCategoria.Columns[1].DataPropertyName = "descripcion";
+            
 
             dgvCategoria.AutoResizeColumnHeadersHeight();
             dgvCategoria.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
 
         }
-
-
-
-
-
 
 
         private void frmGestionCategoria_Load(object sender, EventArgs e)

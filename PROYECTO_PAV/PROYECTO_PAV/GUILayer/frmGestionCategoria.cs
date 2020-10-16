@@ -141,9 +141,6 @@ namespace PROYECTO_PAV.GUILayer
         {
             frmABMCategorias form = new frmABMCategorias();
 
-
-
-
             form.ShowDialog();
             btnConsultar_Click(sender, e);
         }

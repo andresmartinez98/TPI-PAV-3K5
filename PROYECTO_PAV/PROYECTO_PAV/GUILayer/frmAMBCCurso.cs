@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,12 +20,45 @@ namespace PROYECTO_PAV.GUILayer
         private readonly CursoService oCursoService;
         private readonly CategoriaService oCategoriaService;
         private Curso oCursoSelected;
+        private readonly ObjetivoService oObjetivoService;
+
 
         public frmAMBCCurso()
         {
             InitializeComponent();
             oCursoService = new CursoService();
             oCategoriaService = new CategoriaService();
+            oObjetivoService = new ObjetivoService();
+
+            InitializeDataGridView();
+            
+        }
+
+        private void InitializeDataGridView()
+        {
+            dgvObjetivos.ColumnCount = 4;
+            dgvObjetivos.ColumnHeadersVisible = true;
+            dgvObjetivos.AutoGenerateColumns = false;
+
+            DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+            columnHeaderStyle.BackColor = Color.Beige;
+            columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
+
+            dgvObjetivos.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+
+            dgvObjetivos.Columns[0].Name = "Nombre Corto";
+            dgvObjetivos.Columns[0].DataPropertyName = "nombrecorto";
+            dgvObjetivos.Columns[1].Name = "Nombre Largo";
+            dgvObjetivos.Columns[1].DataPropertyName = "nombrelargo";
+            dgvObjetivos.Columns[2].Name = "Puntos";
+            dgvObjetivos.Columns[2].DataPropertyName = "puntos";
+            dgvObjetivos.Columns[3].Name = "Estado";
+            dgvObjetivos.Columns[3].DataPropertyName = "borrado";
+
+            dgvObjetivos.Columns[3].Width = 0;
+
+            dgvObjetivos.AutoResizeColumnHeadersHeight();
+            dgvObjetivos.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
         }
 
         public enum FormMode
@@ -36,8 +70,16 @@ namespace PROYECTO_PAV.GUILayer
 
         private void frmAMBCCurso_Load(System.Object sender, System.EventArgs e)
         {
-          LlenarCombo(cmbCategoria, oCategoriaService.ObtenerTodos(), "Nombre", "IdCategoria");
+            LlenarCombo(cmbCategoria, oCategoriaService.ObtenerTodos(), "Nombre", "IdCategoria");
+            LlenarCombo(cmbObjetivo, oObjetivoService.ObtenerTodos(), "Nombre", "NombreLargo");
 
+            cmbCategoria.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbCategoria.AutoCompleteSource = AutoCompleteSource.ListItems;
+            
+            cmbObjetivo.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbObjetivo.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            
             switch (formMode)
             {
                 case FormMode.nuevo:
@@ -218,12 +260,35 @@ namespace PROYECTO_PAV.GUILayer
 
         private void txtFecha_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+       
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            //frmObjetivoCurso form = new frmObjetivoCurso();
+            //var curso = (Curso)dgvCurso.CurrentRow.DataBoundItem;
+            //form.InicializarFormulario(frmAMBCCurso.FormMode.actualizar, curso);
+            //form.ShowDialog();
+            //btnDetalle_Click(sender, e);
+
+            //this.Width(450);
+            //this.Height(265);
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
+
+
+
+
+        }
+
+        
     }
 }

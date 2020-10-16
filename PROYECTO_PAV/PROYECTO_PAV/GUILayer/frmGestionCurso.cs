@@ -169,8 +169,7 @@ namespace PROYECTO_PAV
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmAMBCCurso form = new frmAMBCCurso();        
-            
+            frmAMBCCurso form = new frmAMBCCurso(); 
             form.ShowDialog();
             btnConsultar_Click(sender, e);
         }

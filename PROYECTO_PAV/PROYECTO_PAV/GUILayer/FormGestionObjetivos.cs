@@ -48,8 +48,6 @@ namespace PROYECTO_PAV.GUILayer
         }
 
 
-
-
         private void FormGestionObjetivos_Load(object sender, EventArgs e)
         {
 

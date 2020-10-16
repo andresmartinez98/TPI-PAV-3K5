@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>17</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -184,7 +184,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>16</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -193,7 +193,7 @@
     <value>Verdana, 11.25pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 158</value>
+    <value>560, 72</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -217,7 +217,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>15</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -226,7 +226,7 @@
     <value>Verdana, 11.25pt</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 118</value>
+    <value>508, 32</value>
   </data>
   <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -250,7 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>14</value>
   </data>
   <data name="txtDescripcion.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Narrow, 9.75pt</value>
@@ -280,7 +280,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtDescripcion.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>13</value>
   </data>
   <data name="txtNombre.Location" type="System.Drawing.Point, System.Drawing">
     <value>196, 32</value>
@@ -307,10 +307,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtNombre.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>12</value>
   </data>
   <data name="txtFecha.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 121</value>
+    <value>683, 35</value>
   </data>
   <data name="txtFecha.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -334,10 +334,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtFecha.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>11</value>
   </data>
   <data name="cmbCategoria.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 159</value>
+    <value>683, 73</value>
   </data>
   <data name="cmbCategoria.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -358,13 +358,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbCategoria.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>10</value>
   </data>
   <data name="btnAceptar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
   </data>
+  <data name="btnAceptar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnAceptar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 208</value>
+    <value>824, 581</value>
   </data>
   <data name="btnAceptar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -388,13 +391,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAceptar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>9</value>
   </data>
   <data name="btnCancelar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
   </data>
+  <data name="btnCancelar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCancelar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>347, 208</value>
+    <value>946, 581</value>
   </data>
   <data name="btnCancelar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -418,7 +424,220 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancelar.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="_btnCancelar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>983, 155</value>
+  </data>
+  <data name="_btnCancelar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 36</value>
+  </data>
+  <data name="_btnCancelar.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;_btnCancelar.Name" xml:space="preserve">
+    <value>_btnCancelar</value>
+  </data>
+  <data name="&gt;&gt;_btnCancelar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_btnCancelar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;_btnCancelar.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="_btnQuitar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>939, 155</value>
+  </data>
+  <data name="_btnQuitar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 36</value>
+  </data>
+  <data name="_btnQuitar.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;_btnQuitar.Name" xml:space="preserve">
+    <value>_btnQuitar</value>
+  </data>
+  <data name="&gt;&gt;_btnQuitar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_btnQuitar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;_btnQuitar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="_btnAgregar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>897, 155</value>
+  </data>
+  <data name="_btnAgregar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="_btnAgregar.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;_btnAgregar.Name" xml:space="preserve">
+    <value>_btnAgregar</value>
+  </data>
+  <data name="&gt;&gt;_btnAgregar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;_btnAgregar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;_btnAgregar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtPuntos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>683, 166</value>
+  </data>
+  <data name="txtPuntos.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtPuntos.MaxLength" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="txtPuntos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 22</value>
+  </data>
+  <data name="txtPuntos.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;txtPuntos.Name" xml:space="preserve">
+    <value>txtPuntos</value>
+  </data>
+  <data name="&gt;&gt;txtPuntos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPuntos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtPuntos.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblPuntos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPuntos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 12pt</value>
+  </data>
+  <data name="lblPuntos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPuntos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>583, 164</value>
+  </data>
+  <data name="lblPuntos.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblPuntos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 25</value>
+  </data>
+  <data name="lblPuntos.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="lblPuntos.Text" xml:space="preserve">
+    <value>Puntos:</value>
+  </data>
+  <data name="&gt;&gt;lblPuntos.Name" xml:space="preserve">
+    <value>lblPuntos</value>
+  </data>
+  <data name="&gt;&gt;lblPuntos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPuntos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblPuntos.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="dgvObjetivos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 204</value>
+  </data>
+  <data name="dgvObjetivos.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="dgvObjetivos.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="dgvObjetivos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1002, 345</value>
+  </data>
+  <data name="dgvObjetivos.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;dgvObjetivos.Name" xml:space="preserve">
+    <value>dgvObjetivos</value>
+  </data>
+  <data name="&gt;&gt;dgvObjetivos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvObjetivos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvObjetivos.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cmbObjetivo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 162</value>
+  </data>
+  <data name="cmbObjetivo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="cmbObjetivo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 24</value>
+  </data>
+  <data name="cmbObjetivo.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;cmbObjetivo.Name" xml:space="preserve">
+    <value>cmbObjetivo</value>
+  </data>
+  <data name="&gt;&gt;cmbObjetivo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbObjetivo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cmbObjetivo.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblObjetivo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblObjetivo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 12pt</value>
+  </data>
+  <data name="lblObjetivo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblObjetivo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 163</value>
+  </data>
+  <data name="lblObjetivo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblObjetivo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 25</value>
+  </data>
+  <data name="lblObjetivo.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="lblObjetivo.Text" xml:space="preserve">
+    <value>Objetivo:</value>
+  </data>
+  <data name="&gt;&gt;lblObjetivo.Name" xml:space="preserve">
+    <value>lblObjetivo</value>
+  </data>
+  <data name="&gt;&gt;lblObjetivo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblObjetivo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblObjetivo.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -427,16 +646,16 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>457, 270</value>
+    <value>1082, 653</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>475, 317</value>
+    <value>1100, 700</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>475, 317</value>
+    <value>1000, 700</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -18,6 +18,8 @@ namespace PROYECTO_PAV.Entities
 
         public bool Borrado { get; set; }
 
+        public int Puntos { get; set; }
+
         public Objetivo() 
         {
         

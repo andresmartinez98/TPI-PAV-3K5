@@ -22,7 +22,7 @@ namespace PROYECTO_PAV.Entities
 
         public Categoria Categoria { get; set; }
 
-        //public List<Objetivo> Objetivo { get; set; }
+        public List<Objetivo> Objetivo { get; set; }
 
         public Curso()
         {
@@ -33,8 +33,6 @@ namespace PROYECTO_PAV.Entities
         {
             return Nombre ;
         }
-
-        
 
     }
 }

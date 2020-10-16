@@ -15,16 +15,14 @@ namespace PROYECTO_PAV.DataAccesLayer
         {
             List<Curso> listadoCurso = new List<Curso>();
 
-            String strSql = string.Concat(  " SELECT c.id_curso, ",
-                                            "        c.nombre, ",
-                                            "        c.descripcion, ",
-                                            "        c.fecha_vigencia, ",
-                                            "        c.id_categoria , ",
-                                            "        c.borrado , ",      
-                                            "        k.nombre as 'nombreCat'  ",
-                                            
+            String strSql = string.Concat(  " SELECT c.*, ",
+                                            "        o.*, ",
+                                            "        oc.puntos, ",                                                         
+                                            "        k.nombre as 'nombreCat'  ",                                            
                                             " FROM Cursos c",
-                                            " INNER JOIN Categorias k ON c.id_categoria = k.id_categoria ",
+                                            " LEFT JOIN Categorias k ON (c.id_categoria = k.id_categoria) ",
+                                            " LEFT JOIN ObjetivosCursos oc ON (c.id_curso = oc.id_curso)",
+                                            " LEFT JOIN Objetivos o ON(oc.id_objetivo = o.id_objetivo)",
                                             " WHERE c.borrado = 0 ");
             var resultado = DataManager.GetInstance().ConsultaSQL(strSql);
 
@@ -40,7 +38,7 @@ namespace PROYECTO_PAV.DataAccesLayer
         {
             Curso oCurso = new Curso();
                        
-                oCurso.IdCurso =Convert.ToInt32( row["id_curso"].ToString());
+                oCurso.IdCurso =Convert.ToInt32(row["id_curso"].ToString());
                 oCurso.Nombre = row["nombre"].ToString();
                 oCurso.Descripcion = row["descripcion"].ToString();
                 oCurso.FechaVigencia = Convert.ToDateTime(row["fecha_vigencia"].ToString());

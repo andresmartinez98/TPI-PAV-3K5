@@ -39,6 +39,15 @@
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this._btnCancelar = new System.Windows.Forms.Button();
+            this._btnQuitar = new System.Windows.Forms.Button();
+            this._btnAgregar = new System.Windows.Forms.Button();
+            this.txtPuntos = new System.Windows.Forms.TextBox();
+            this.lblPuntos = new System.Windows.Forms.Label();
+            this.dgvObjetivos = new System.Windows.Forms.DataGridView();
+            this.cmbObjetivo = new System.Windows.Forms.ComboBox();
+            this.lblObjetivo = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,11 +111,69 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // _btnCancelar
+            // 
+            resources.ApplyResources(this._btnCancelar, "_btnCancelar");
+            this._btnCancelar.Name = "_btnCancelar";
+            this._btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // _btnQuitar
+            // 
+            resources.ApplyResources(this._btnQuitar, "_btnQuitar");
+            this._btnQuitar.Name = "_btnQuitar";
+            this._btnQuitar.UseVisualStyleBackColor = true;
+            // 
+            // _btnAgregar
+            // 
+            resources.ApplyResources(this._btnAgregar, "_btnAgregar");
+            this._btnAgregar.Name = "_btnAgregar";
+            this._btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // txtPuntos
+            // 
+            resources.ApplyResources(this.txtPuntos, "txtPuntos");
+            this.txtPuntos.Name = "txtPuntos";
+            // 
+            // lblPuntos
+            // 
+            resources.ApplyResources(this.lblPuntos, "lblPuntos");
+            this.lblPuntos.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lblPuntos.Name = "lblPuntos";
+            // 
+            // dgvObjetivos
+            // 
+            this.dgvObjetivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvObjetivos.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dgvObjetivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvObjetivos.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            resources.ApplyResources(this.dgvObjetivos, "dgvObjetivos");
+            this.dgvObjetivos.Name = "dgvObjetivos";
+            // 
+            // cmbObjetivo
+            // 
+            this.cmbObjetivo.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbObjetivo, "cmbObjetivo");
+            this.cmbObjetivo.Name = "cmbObjetivo";
+            // 
+            // lblObjetivo
+            // 
+            resources.ApplyResources(this.lblObjetivo, "lblObjetivo");
+            this.lblObjetivo.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lblObjetivo.Name = "lblObjetivo";
+            // 
             // frmAMBCCurso
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.Controls.Add(this._btnCancelar);
+            this.Controls.Add(this._btnQuitar);
+            this.Controls.Add(this._btnAgregar);
+            this.Controls.Add(this.txtPuntos);
+            this.Controls.Add(this.lblPuntos);
+            this.Controls.Add(this.dgvObjetivos);
+            this.Controls.Add(this.cmbObjetivo);
+            this.Controls.Add(this.lblObjetivo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cmbCategoria);
@@ -121,6 +188,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmAMBCCurso";
             this.Load += new System.EventHandler(this.frmAMBCCurso_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +206,13 @@
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button _btnCancelar;
+        private System.Windows.Forms.Button _btnQuitar;
+        private System.Windows.Forms.Button _btnAgregar;
+        private System.Windows.Forms.TextBox txtPuntos;
+        private System.Windows.Forms.Label lblPuntos;
+        private System.Windows.Forms.DataGridView dgvObjetivos;
+        private System.Windows.Forms.ComboBox cmbObjetivo;
+        private System.Windows.Forms.Label lblObjetivo;
     }
 }

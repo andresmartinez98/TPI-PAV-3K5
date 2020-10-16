@@ -14,7 +14,7 @@ namespace PROYECTO_PAV.DataAccesLayer
         {
             List<Categoria> listadoBugs = new List<Categoria>();
 
-            var strSql = "SELECT id_categoria, nombre , descripcion FROM Categorias WHERE borrado = 0 ";
+            var strSql = "SELECT * FROM Categorias WHERE borrado = 0 ";
 
             var resultado = DataManager.GetInstance().ConsultaSQL(strSql);
 
@@ -120,8 +120,6 @@ namespace PROYECTO_PAV.DataAccesLayer
         }
 
 
-
-
         private Categoria ObjectMapping(DataRow row)
         {
             Categoria oCategoria = new Categoria();
@@ -130,8 +128,9 @@ namespace PROYECTO_PAV.DataAccesLayer
             oCategoria.IdCategoria = Convert.ToInt32(row["id_categoria"].ToString());
             oCategoria.Nombre = row["nombre"].ToString();
             oCategoria.Descripcion = row["descripcion"].ToString();
+            oCategoria.Borrado = Convert.ToBoolean(row["borrado"].ToString());
 
-          
+
 
             return oCategoria;
         }

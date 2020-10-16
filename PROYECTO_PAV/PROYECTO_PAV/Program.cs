@@ -17,7 +17,7 @@ namespace PROYECTO_PAV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGestionCurso());
+            Application.Run(new frmPrincipal());
         }
     }
 }

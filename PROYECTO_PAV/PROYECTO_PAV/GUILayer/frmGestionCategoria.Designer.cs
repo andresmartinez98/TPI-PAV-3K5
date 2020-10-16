@@ -58,7 +58,7 @@
             // 
             this.cmbNombreCat.FormattingEnabled = true;
             this.cmbNombreCat.Location = new System.Drawing.Point(140, 45);
-            this.cmbNombreCat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNombreCat.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNombreCat.Name = "cmbNombreCat";
             this.cmbNombreCat.Size = new System.Drawing.Size(240, 24);
             this.cmbNombreCat.TabIndex = 19;
@@ -84,20 +84,20 @@
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoria.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvCategoria.Location = new System.Drawing.Point(16, 135);
-            this.dgvCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCategoria.Name = "dgvCategoria";
             this.dgvCategoria.RowHeadersWidth = 51;
             this.dgvCategoria.Size = new System.Drawing.Size(788, 379);
             this.dgvCategoria.TabIndex = 23;
             this.dgvCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellClick);
-            this.dgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellContentClick);
+            this.dgvCategoria.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCategoria_CellFormatting);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.btnCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnCancelar.Location = new System.Drawing.Point(703, 558);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(101, 41);
             this.btnCancelar.TabIndex = 27;
@@ -111,7 +111,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.btnEditar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnEditar.Location = new System.Drawing.Point(284, 558);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(85, 41);
             this.btnEditar.TabIndex = 26;
@@ -124,7 +124,7 @@
             this.btnAgregar.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.btnAgregar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAgregar.Location = new System.Drawing.Point(39, 558);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(92, 41);
             this.btnAgregar.TabIndex = 25;
@@ -138,7 +138,7 @@
             this.btnQuitar.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.btnQuitar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnQuitar.Location = new System.Drawing.Point(161, 558);
-            this.btnQuitar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuitar.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(92, 41);
             this.btnQuitar.TabIndex = 24;
@@ -151,7 +151,7 @@
             this.btnConsultar.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.btnConsultar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnConsultar.Location = new System.Drawing.Point(554, 44);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(233, 33);
             this.btnConsultar.TabIndex = 28;
@@ -189,7 +189,7 @@
             this.Controls.Add(this.cmbNombreCat);
             this.Controls.Add(this.label7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGestionCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Categorías";

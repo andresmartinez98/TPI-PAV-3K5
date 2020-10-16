@@ -26,7 +26,7 @@ namespace PROYECTO_PAV.GUILayer
         }
         private void InitializeDataGridView()
         {
-            dgvObjetivos.ColumnCount = 2;
+            dgvObjetivos.ColumnCount = 3;
             dgvObjetivos.ColumnHeadersVisible = true;
             dgvObjetivos.AutoGenerateColumns = false;
 
@@ -40,10 +40,14 @@ namespace PROYECTO_PAV.GUILayer
             dgvObjetivos.Columns[0].DataPropertyName = "nombrecorto";
             dgvObjetivos.Columns[1].Name = "Nombre Largo";
             dgvObjetivos.Columns[1].DataPropertyName = "nombrelargo";
+            dgvObjetivos.Columns[2].Name = "Estado";
+            dgvObjetivos.Columns[2].DataPropertyName = "borrado";
+
+            dgvObjetivos.Columns[2].Width = 0;
+
 
             dgvObjetivos.AutoResizeColumnHeadersHeight();
             dgvObjetivos.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
-
 
         }
 
@@ -95,7 +99,7 @@ namespace PROYECTO_PAV.GUILayer
             {
                 parametros.Add("borrado", 0);
             }
-            IList<Objetivo> listObjetivos = ObjetivoService.ConsultarObjetivoConFiltros(parametros);
+            IList<Objetivo> listObjetivos = ObjetivoService.ObjetivoConFiltros(parametros);
 
             dgvObjetivos.DataSource = listObjetivos;
 
@@ -120,8 +124,22 @@ namespace PROYECTO_PAV.GUILayer
 
         private void dgvObjetivos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnAgregar.Enabled = true;
             btnEditar.Enabled = true;
             btnQuitar.Enabled = true;
+
+            try
+            {
+                if (Convert.ToBoolean(this.dgvObjetivos.Rows[e.RowIndex].Cells["Estado"].Value.ToString()) == true)
+                {
+                    btnEditar.Enabled = false;
+                    btnQuitar.Enabled = false;
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -159,6 +177,24 @@ namespace PROYECTO_PAV.GUILayer
         private void chkBorrado_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvObjetivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvObjetivos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgvObjetivos.Columns[e.ColumnIndex].Name == "Estado")
+            {
+                if (Convert.ToBoolean(e.Value) == true)
+                {
+                    e.CellStyle.BackColor = Color.DarkGray;
+                    dgvObjetivos.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkGray;
+                }
+
+            }
         }
     }
 }

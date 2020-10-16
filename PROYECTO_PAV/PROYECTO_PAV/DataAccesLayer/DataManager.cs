@@ -9,8 +9,10 @@ using System.Windows.Forms;
 
 public class DataManager : IDisposable
 
-{    
+{
     private SqlConnection dbConnection;
+    private SqlTransaction dbTransaction;
+    
     private static DataManager instance;
 
     public DataManager()
@@ -29,6 +31,23 @@ public class DataManager : IDisposable
 
         return instance;
     }
+    public void Commit()
+    {
+        if (dbTransaction != null)
+            dbTransaction.Commit();
+    }
+    public void Rollback()
+    {
+        if (dbTransaction != null)
+            dbTransaction.Rollback();
+    }
+
+    public void BeginTransaction()
+    {
+        if (dbConnection.State == ConnectionState.Open)
+            dbTransaction = dbConnection.BeginTransaction();
+    }
+
 
     public void Open()
     {

@@ -17,10 +17,11 @@ namespace PROYECTO_PAV.GUILayer
     {  
         
         private FormMode formMode = FormMode.nuevo;
-        private readonly CursoService oCursoService;
-        private readonly CategoriaService oCategoriaService;
+        private  CursoService oCursoService;
+        private  CategoriaService oCategoriaService;
         private Curso oCursoSelected;
         private readonly ObjetivoService oObjetivoService;
+        private  BindingList<Objetivo> listaObjetivos;
 
 
         public frmAMBCCurso()
@@ -29,6 +30,7 @@ namespace PROYECTO_PAV.GUILayer
             oCursoService = new CursoService();
             oCategoriaService = new CategoriaService();
             oObjetivoService = new ObjetivoService();
+            listaObjetivos = new BindingList<Objetivo>();
 
             InitializeDataGridView();
             
@@ -52,8 +54,10 @@ namespace PROYECTO_PAV.GUILayer
             dgvObjetivos.Columns[1].DataPropertyName = "nombrelargo";
             dgvObjetivos.Columns[2].Name = "Puntos";
             dgvObjetivos.Columns[2].DataPropertyName = "puntos";
+            
             dgvObjetivos.Columns[3].Name = "Estado";
             dgvObjetivos.Columns[3].DataPropertyName = "borrado";
+
 
             dgvObjetivos.Columns[3].Width = 0;
 
@@ -79,7 +83,12 @@ namespace PROYECTO_PAV.GUILayer
             cmbObjetivo.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbObjetivo.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            
+            dgvObjetivos.DataSource = listaObjetivos;
+
+
+
+
+
             switch (formMode)
             {
                 case FormMode.nuevo:
@@ -98,11 +107,25 @@ namespace PROYECTO_PAV.GUILayer
                         cmbCategoria.Enabled = true;
                         txtFecha.Enabled = true;
 
+                        Dictionary<string, object> parametros = new Dictionary<string, object>();
+
+                        parametros.Add("id_curso", oCursoSelected.IdCurso.ToString());
+
+                        IList<Objetivo> listaObjetivos = oObjetivoService.ConsultarObjetivoConFiltros(parametros);
+
+
+
+                        dgvObjetivos.DataSource = listaObjetivos;
+
+
+
                         break;
                     }
 
                 case FormMode.eliminar:
                     {
+
+                     
                         MostrarDatos();
                         this.Text = "Eliminar Curso";
                         txtNombre.Enabled = false;
@@ -114,6 +137,10 @@ namespace PROYECTO_PAV.GUILayer
                     }
             }
         }
+
+
+
+
 
         private void MostrarDatos()
         {
@@ -154,8 +181,14 @@ namespace PROYECTO_PAV.GUILayer
                                 oCurso.Nombre = txtNombre.Text;
                                 oCurso.Descripcion = txtDescripcion.Text;                               
                                 oCurso.FechaVigencia = Convert.ToDateTime((txtFecha.Text));
+                                
                                 oCurso.Categoria = new Categoria();
                                 oCurso.Categoria.IdCategoria = (int)cmbCategoria.SelectedValue;
+
+                                oCurso.Objetivo = new List<Objetivo>();
+                                oCurso.Objetivo = listaObjetivos;
+                              
+                                
 
                                 if (oCursoService.CrearCurso(oCurso))
                                 {
@@ -170,7 +203,13 @@ namespace PROYECTO_PAV.GUILayer
                     }
                 
                 case FormMode.actualizar:
+
                     {
+                       
+
+
+
+
                         if (ValidarCampos())
                         {                           
                             oCursoSelected.Nombre = txtNombre.Text;
@@ -178,6 +217,8 @@ namespace PROYECTO_PAV.GUILayer
                             oCursoSelected.FechaVigencia =Convert.ToDateTime(txtFecha.Text);
                             oCursoSelected.Categoria = new Categoria();
                             oCursoSelected.Categoria.IdCategoria = (int)cmbCategoria.SelectedValue;
+                            oCursoSelected.Objetivo = new List<Objetivo>();
+                            oCursoSelected.Objetivo = listaObjetivos;
 
                             if (oCursoService.ActualizarCurso(oCursoSelected))
                             {
@@ -187,7 +228,7 @@ namespace PROYECTO_PAV.GUILayer
                             else
                                 MessageBox.Show("Error al actualizar el Curso", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-
+                        
                         break;
                     }
             
@@ -217,6 +258,7 @@ namespace PROYECTO_PAV.GUILayer
 
         private bool ValidarCampos()
         {
+            cmbObjetivo.BackColor = Color.White;
             txtNombre.BackColor = Color.White;
             txtFecha.BackColor = Color.White;
             cmbCategoria.BackColor = Color.White;
@@ -227,6 +269,8 @@ namespace PROYECTO_PAV.GUILayer
                 return false;
             }
                         
+
+         
             if (!EsFecha(txtFecha.Text))
             {
                 
@@ -241,7 +285,13 @@ namespace PROYECTO_PAV.GUILayer
                 cmbCategoria.Focus();
                 return false;
             }
-            
+            if (cmbObjetivo.Text == string.Empty)
+            {
+                cmbObjetivo.BackColor = Color.Firebrick;
+                cmbObjetivo.Focus();
+                return false;
+            }
+
             return true;
         }
 
@@ -289,6 +339,97 @@ namespace PROYECTO_PAV.GUILayer
 
         }
 
+        private void dgvObjetivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
+                int cantidad = 0;
+                int.TryParse(txtAgregar.Text, out cantidad);
+
+                var obj = (Objetivo)cmbObjetivo.SelectedItem;
+                listaObjetivos.Add(new Objetivo()
+                {
+                    NombreCorto = obj.NombreCorto,
+                    NombreLargo = obj.NombreLargo,
+                    Puntos = cantidad,
+                    IdObjetivo = obj.IdObjetivo
+
+                });
+            }
+
+    
+
+            //InicializarDetalle();
+
+        }
+
+        private void cmbObjetivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _btnCancelar_Click(object sender, EventArgs e)
+        {
+            InicializarDetalle();
+        }
+        private void InicializarDetalle()
+        {
+
+       
+            cmbCategoria.SelectedIndex = -1;
+            txtAgregar.Text = "";
+            cmbObjetivo.SelectedIndex = -1;
+            txtDescripcion.Text = "";
+            txtNombre.Text = "";
+            txtFecha.Text = "";
+        }
+        private void _btnQuitar_Click(object sender, EventArgs e)
+        {
+            if (dgvObjetivos.CurrentRow != null)
+            {
+                var obj = (Objetivo)dgvObjetivos.CurrentRow.DataBoundItem;
+                listaObjetivos.Remove(obj);
+            }
+        }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarObj_Click(object sender, EventArgs e)
+        {
+            frmABMObjetivos form = new frmABMObjetivos();
+            form.ShowDialog();
+            
+            LlenarCombo(cmbObjetivo, oObjetivoService.ObtenerTodos(), "Nombre", "NombreLargo");
+        }
+
+      
+        
+            
+        
+        private void gpbObjetivos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAgregar_TextChanged(object sender, EventArgs e)
+        {
+           
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtAgregar.Text, "[^0-9]"))
+                {
+                    MessageBox.Show("Por favor, introduzca solo numeros.");
+                txtAgregar.Text = txtAgregar.Text.Remove(txtAgregar.Text.Length - 1);
+                }
+
+            }
         
     }
 }

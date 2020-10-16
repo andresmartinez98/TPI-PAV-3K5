@@ -16,6 +16,8 @@ namespace PROYECTO_PAV.Entities
         
         public string Descripcion { get; set; }
 
+        public bool Borrado { get; set; }
+
         public Categoria() { }
 
         public override string ToString()

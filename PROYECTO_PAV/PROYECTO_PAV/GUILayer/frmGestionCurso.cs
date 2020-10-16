@@ -29,7 +29,7 @@ namespace PROYECTO_PAV
 
         private void InitializeDataGridView()
         {
-            dgvCurso.ColumnCount = 5;
+            dgvCurso.ColumnCount =5;
             dgvCurso.ColumnHeadersVisible = true;
             dgvCurso.AutoGenerateColumns = false;
 
@@ -49,13 +49,12 @@ namespace PROYECTO_PAV
             dgvCurso.Columns[3].DataPropertyName = "categoria";
             dgvCurso.Columns[4].Name = "Estado";
             dgvCurso.Columns[4].DataPropertyName = "borrado";
-
+            
             dgvCurso.Columns[4].Width = 0;
-
+            
             dgvCurso.AutoResizeColumnHeadersHeight();
             dgvCurso.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
 
-            
         }
 
         private void GestionCurso_Load(object sender, EventArgs e)
@@ -121,7 +120,7 @@ namespace PROYECTO_PAV
                 parametros.Add("borrado", 0);
             }
             
-            IList<Curso> listadoCurso = CursoService.ConsultarCursoConFiltros(parametros);
+            IList<Curso> listadoCurso = CursoService.ConsultarCursoConFiltrosGestion(parametros);
 
             dgvCurso.DataSource = listadoCurso;
 
@@ -163,8 +162,8 @@ namespace PROYECTO_PAV
             }
             catch (ArgumentOutOfRangeException)
             {
-                
-            }            
+
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,17 +23,18 @@ namespace PROYECTO_PAV.Entities
 
         public Categoria Categoria { get; set; }
 
-        public List<Objetivo> Objetivo { get; set; }
+        public IList<Objetivo> Objetivo { get; set; }
 
         public Curso()
         {
-            //Objetivo = new List<Objetivo>();
+            Objetivo = new List<Objetivo>();
         }
 
         public override string ToString()
         {
             return Nombre ;
         }
+
 
     }
 }

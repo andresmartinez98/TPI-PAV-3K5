@@ -24,11 +24,10 @@ namespace PROYECTO_PAV.GUILayer
             InitializeDataGridView();
         }
 
-
         private void InitializeDataGridView()
             {
 
-            dgvCategoria.ColumnCount = 2;
+            dgvCategoria.ColumnCount = 3;
             dgvCategoria.ColumnHeadersVisible = true;
             dgvCategoria.AutoGenerateColumns = false;
 
@@ -42,19 +41,19 @@ namespace PROYECTO_PAV.GUILayer
             dgvCategoria.Columns[0].DataPropertyName = "nombre";
             dgvCategoria.Columns[1].Name = "Descripcion";
             dgvCategoria.Columns[1].DataPropertyName = "descripcion";
-            
+            dgvCategoria.Columns[2].Name = "Estado";
+            dgvCategoria.Columns[2].DataPropertyName = "borrado";
+
+            dgvCategoria.Columns[2].Width = 0;
 
             dgvCategoria.AutoResizeColumnHeadersHeight();
             dgvCategoria.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
 
         }
 
-
         private void frmGestionCategoria_Load(object sender, EventArgs e)
         {
-
             LlenarCombo(cmbNombreCat, CategoriaService.ObtenerTodos(), "Nombre", "Nombre");
-
 
             cmbNombreCat.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbNombreCat.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -72,17 +71,12 @@ namespace PROYECTO_PAV.GUILayer
             cbo.SelectedIndex = -1;
         }
 
-
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void dgvCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
@@ -99,30 +93,17 @@ namespace PROYECTO_PAV.GUILayer
                 parametros.Add("borrado", 0);
             }
 
-
-
             IList<Categoria> listadoCategoria = CategoriaService.ConsultarCategoriaConFiltros(parametros);
-
 
             dgvCategoria.DataSource = listadoCategoria;
 
-
-
             if (dgvCategoria.Rows.Count == 0)
             {
-               
-                
-                    
-               MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+               MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);            }
             else
             {
-                lblColumnas.Text = "Categorías Recuperadas: "+Convert.ToString(dgvCategoria.Rows.Count);
-               
+                lblColumnas.Text = "Categorías Recuperadas: "+Convert.ToString(dgvCategoria.Rows.Count);               
             }
-
-
-
 
         }
 
@@ -135,6 +116,21 @@ namespace PROYECTO_PAV.GUILayer
         {
             btnEditar.Enabled = true;
             btnQuitar.Enabled = true;
+
+             try
+                {
+                    if (Convert.ToBoolean(this.dgvCategoria.Rows[e.RowIndex].Cells["Estado"].Value.ToString()) == true)
+                    {
+                        btnEditar.Enabled = false;
+                        btnQuitar.Enabled = false;
+                    }
+                }
+             catch (ArgumentOutOfRangeException)
+             {
+ 
+             }
+
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -162,12 +158,27 @@ namespace PROYECTO_PAV.GUILayer
             formulario.InicializarFormulario(frmABMCategorias.FormMode.eliminar, categoria);
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvCategoria_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+            if (this.dgvCategoria.Columns[e.ColumnIndex].Name == "Estado")
+            {
+
+                if (Convert.ToBoolean(e.Value) == true)
+                {
+                    e.CellStyle.BackColor = Color.DarkGray;
+                    dgvCategoria.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkGray;
+                }
+
+            }
+            
         }
     }
 }

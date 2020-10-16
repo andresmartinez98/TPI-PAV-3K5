@@ -25,6 +25,10 @@ namespace PROYECTO_PAV.BusinessLayer
         {
             return oCursoDao.GetCursoByFilters(parametros);
         }
+        public IList<Curso> ConsultarCursoConFiltrosGestion(Dictionary<string, object> parametros)
+        {
+            return oCursoDao.GetCursoByFiltersGestion(parametros);
+        }
         internal object ObtenerCurso(string curso)
         {
             return oCursoDao.GetCurso(curso);

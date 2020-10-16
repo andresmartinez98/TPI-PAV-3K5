@@ -17,7 +17,11 @@ namespace PROYECTO_PAV.BusinessLayer
             oObjetivoDao = new ObjetivoDao();
         }
 
-
+      
+        public IList<Objetivo> ObjetivoConFiltros(Dictionary<string, object> parametros)
+        {
+            return oObjetivoDao.ObjetivoByFilters(parametros);
+        }
         public IList<Objetivo> ObtenerTodos()
         {
             return oObjetivoDao.GetAll();
@@ -27,7 +31,10 @@ namespace PROYECTO_PAV.BusinessLayer
         {
             return oObjetivoDao.GetObjetivoByFilters(parametros);
         }
-
+        public IList<Objetivo> ConsultarObjetivoConFiltrosSecundario(Dictionary<string, object> parametros)
+        {
+            return oObjetivoDao.GetObjetivoByFiltersId(parametros);
+        }
         internal object ObtenerObjetivo(string objetivo)
         {
             return oObjetivoDao.GetObjetivo(objetivo);

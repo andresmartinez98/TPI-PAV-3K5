@@ -16,11 +16,12 @@ namespace PROYECTO_PAV.DataAccesLayer
         {
             List<Objetivo> listObjetivo = new List<Objetivo>();
 
-            String strSql = string.Concat(" SELECT * ",
-                                          " FROM Objetivos ",
-                                          " WHERE borrado = 0");
+            String strSql = string.Concat(" SELECT * "+
+                                                  
+                                        " FROM Objetivos  ");
             
             var resultado = DataManager.GetInstance().ConsultaSQL(strSql);
+
 
             foreach (DataRow row in resultado.Rows)
             {
@@ -36,6 +37,11 @@ namespace PROYECTO_PAV.DataAccesLayer
             oObjetivo.IdObjetivo = Convert.ToInt32(row["id_objetivo"].ToString());
             oObjetivo.NombreCorto = row["nombre_corto"].ToString();
             oObjetivo.NombreLargo = row["nombre_largo"].ToString();
+           
+             //oObjetivo.Puntos= Convert.ToInt32(row["puntos"].ToString()); 
+            
+           
+           
             oObjetivo.Borrado = Convert.ToBoolean(row["borrado"].ToString());
 
 
@@ -46,10 +52,19 @@ namespace PROYECTO_PAV.DataAccesLayer
         {
             List<Objetivo> listObjetivo = new List<Objetivo>();
 
-            var strSql = String.Concat(" SELECT * ",                                 
-                                       " FROM  Objetivos ",
-                                       " WHERE 1 = 1 ");
+            String strSql = string.Concat(" SELECT c.*, ",
+                                             "        o.*, ",
+                                             "        oc.puntos, ",
+                                             
+                                             "        k.nombre as 'nombreCat'  ",
+                                             " FROM Cursos c",
+                                             " LEFT JOIN Categorias k ON (c.id_categoria = k.id_categoria) ",
+                                             " LEFT JOIN ObjetivosCursos oc ON (c.id_curso = oc.id_curso)",
+                                             " LEFT JOIN Objetivos o ON(oc.id_objetivo = o.id_objetivo)",
+                                             " WHERE c.borrado = 0 ");
 
+            if (parametros.ContainsKey("id_curso"))
+                strSql += " AND (c.id_curso=@id_curso) ";
             if (parametros.ContainsKey("nombre_largo"))
                 strSql += " AND (nombre_largo=@nombre_largo) ";
 
@@ -66,10 +81,61 @@ namespace PROYECTO_PAV.DataAccesLayer
 
             foreach (DataRow row in resultado)
             {
+                listObjetivo.Add(ObjectMappingPuntos(row));
+            }
+
+            return listObjetivo;
+        }
+
+
+        public IList<Objetivo> ObjetivoByFilters(Dictionary<string, object> parametros)
+        {
+            List<Objetivo> listObjetivo = new List<Objetivo>();
+
+            String strSql = string.Concat(" Select o.* " +
+                                          "  from objetivos o " +
+                                          "where 1=1      ");
+
+            if (parametros.ContainsKey("id_curso"))
+                strSql += " AND (c.id_curso=@id_curso) ";
+            if (parametros.ContainsKey("nombre_largo"))
+                strSql += " AND (nombre_largo=@nombre_largo) ";
+
+            if (parametros.ContainsKey("nombre_corto"))
+                strSql += " AND (nombre_corto=@nombre_corto) ";
+
+            if (parametros.ContainsKey("borrado"))
+                strSql += " AND (borrado=@borrado) ";
+
+
+
+
+            var resultado = (DataRowCollection)DataManager.GetInstance().ConsultaSQL(strSql, parametros).Rows;
+
+            foreach (DataRow row in resultado)
+            {
                 listObjetivo.Add(ObjectMapping(row));
             }
 
             return listObjetivo;
+        }
+
+        private Objetivo ObjectMappingPuntos(DataRow row)
+        {
+            Objetivo oObjetivo = new Objetivo();
+
+            oObjetivo.IdObjetivo = Convert.ToInt32(row["id_objetivo"].ToString());
+            oObjetivo.NombreCorto = row["nombre_corto"].ToString();
+            oObjetivo.NombreLargo = row["nombre_largo"].ToString();
+
+            oObjetivo.Puntos= Convert.ToInt32(row["puntos"].ToString()); 
+
+
+
+            oObjetivo.Borrado = Convert.ToBoolean(row["borrado"].ToString());
+
+
+            return oObjetivo;
         }
         public Objetivo GetObjetivo(string nombreObjetivo)
         {
@@ -92,6 +158,38 @@ namespace PROYECTO_PAV.DataAccesLayer
             }
 
             return null;
+        }
+
+        public IList<Objetivo> GetObjetivoByFiltersId(Dictionary<string, object> parametros)
+        {
+            List<Objetivo> listObjetivo = new List<Objetivo>();
+            String strSql = string.Concat(" SELECT o.*, ",
+                                        "    oc.puntos ",
+                                         " FROM Cursos c",
+                                      " LEFT JOIN Categorias k ON (c.id_categoria = k.id_categoria) ",
+                                      " LEFT JOIN ObjetivosCursos oc ON (c.id_curso = oc.id_curso)",
+                                      " LEFT JOIN Objetivos o ON(oc.id_objetivo = o.id_objetivo)",
+                                      " WHERE c.borrado = 0  ");
+            
+           
+        
+
+            if (parametros.ContainsKey("id_curso"))
+                strSql += " AND (id_curso=@id_curso) ";
+
+
+
+
+           var resultado = (DataRowCollection)DataManager.GetInstance().ConsultaSQL(strSql, parametros).Rows;
+            
+            foreach (DataRow row in resultado)
+            {
+                listObjetivo.Add(ObjectMapping(row));
+            }
+
+            return listObjetivo;
+
+
         }
 
 

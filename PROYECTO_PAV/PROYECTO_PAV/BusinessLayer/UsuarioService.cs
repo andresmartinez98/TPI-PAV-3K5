@@ -38,6 +38,14 @@ namespace PROYECTO_PAV.BusinessLayer
             }
         }
 
+        public IList<Usuario> ObtenerUsuariosxCurso()
+        {
+            return oUsuarioDao.UsuarioxCurso();
+        }
+
+
+
+
         internal bool CrearUsuario(Usuario oUsuario)
         {
             return oUsuarioDao.Create(oUsuario);

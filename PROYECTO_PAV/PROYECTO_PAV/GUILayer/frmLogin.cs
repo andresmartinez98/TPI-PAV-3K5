@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using PROYECTO_PAV.BusinessLayer;
+using PROYECTO_PAV.GUILayer;
 
 namespace PROYECTO_PAV
 {
@@ -76,7 +77,28 @@ namespace PROYECTO_PAV
             if (usr != null)
             {
                 UsuarioLogueado = usr.NombreUsuario;
-                this.Close();
+               
+
+
+                //por si despues queremos poner el alta de usr pero hy que refinr la cosa
+                if (usr.NombreUsuario == "administrador")
+                {
+                    frmPrincipal principal = new frmPrincipal();
+                    principal.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    frmCliente formulario = new frmCliente();
+
+                    formulario.InicializarFormulario(usr);
+                    formulario.Show();
+                  
+                    this.Hide();
+
+
+
+                }
             }
             else
             {

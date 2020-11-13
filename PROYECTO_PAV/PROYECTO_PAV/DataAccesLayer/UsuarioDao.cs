@@ -33,6 +33,29 @@ namespace PROYECTO_PAV.DataAccesLayer
 
             return listadoBugs;
         }
+
+
+
+
+        public IList<Usuario> UsuarioxCurso()
+        {
+            List<Usuario> listadoBugs = new List<Usuario>();
+
+            String strSql = string.Concat( "select Distinct u.usuario ",
+                                            "from Usuarios u left ",
+                                            "join UsuariosCurso uc on (u.id_usuario = uc.id_usuario) ",
+                                            "left join UsuariosCursoAvance uca on (uca.id_usuario = uc.id_usuario) ",
+                                            "left join Cursos c on (uca.id_curso = c.id_curso) ");
+
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql);
+
+            foreach (DataRow row in resultadoConsulta.Rows)
+            {
+                listadoBugs.Add(ObjectMappingUsuarioCurso(row));
+            }
+
+            return listadoBugs;
+        }
         public Usuario GetUser(string nombreUsuario)
         {
             String strSql = string.Concat(" SELECT id_usuario, ",
@@ -145,6 +168,18 @@ namespace PROYECTO_PAV.DataAccesLayer
                     Nombre = row["perfil"].ToString(),
                 }
             };
+
+            return oUsuario;
+        }
+
+        private Usuario ObjectMappingUsuarioCurso(DataRow row)
+        {
+            Usuario oUsuario = new Usuario();
+
+
+            oUsuario.NombreUsuario = row["usuario"].ToString();
+               
+            
 
             return oUsuario;
         }

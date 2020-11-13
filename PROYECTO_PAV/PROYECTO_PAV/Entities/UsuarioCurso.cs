@@ -8,6 +8,7 @@ namespace PROYECTO_PAV.Entities
 {
      public class UsuarioCurso
     {
+        public int IdUsuario { get; set; }
         public Usuario Usuario { get; set; }
 
         public Curso Curso  { get; set; }
@@ -19,5 +20,7 @@ namespace PROYECTO_PAV.Entities
         public DateTime FechaInicio { get; set; }
 
         public  DateTime FechaFin { get; set; }
+
+        public int Avance { get; set; }
     }
 }

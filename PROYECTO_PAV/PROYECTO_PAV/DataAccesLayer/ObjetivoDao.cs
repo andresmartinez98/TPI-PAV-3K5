@@ -61,7 +61,7 @@ namespace PROYECTO_PAV.DataAccesLayer
                                              " LEFT JOIN Categorias k ON (c.id_categoria = k.id_categoria) ",
                                              " LEFT JOIN ObjetivosCursos oc ON (c.id_curso = oc.id_curso)",
                                              " LEFT JOIN Objetivos o ON(oc.id_objetivo = o.id_objetivo)",
-                                             " WHERE c.borrado = 0 ");
+                                             " WHERE c.borrado = 0  AND oc.borrado=0 ");
 
             if (parametros.ContainsKey("id_curso"))
                 strSql += " AND (c.id_curso=@id_curso) ";
@@ -75,6 +75,75 @@ namespace PROYECTO_PAV.DataAccesLayer
                 strSql += " AND (borrado=@borrado) ";
 
         
+
+
+            var resultado = (DataRowCollection)DataManager.GetInstance().ConsultaSQL(strSql, parametros).Rows;
+
+            foreach (DataRow row in resultado)
+            {
+                listObjetivo.Add(ObjectMappingPuntos(row));
+            }
+
+            return listObjetivo;
+        }
+        public IList<Objetivo> GetObjetivoByFiltersAll(Dictionary<string, object> parametros)
+        {
+            List<Objetivo> listObjetivo = new List<Objetivo>();
+
+            String strSql = string.Concat(" SELECT c.*, ",
+                                             "        o.*, ",
+                                             "        oc.puntos, ",
+
+                                             "        k.nombre as 'nombreCat'  ",
+                                             " FROM Cursos c",
+                                             " LEFT JOIN Categorias k ON (c.id_categoria = k.id_categoria) ",
+                                             " LEFT JOIN ObjetivosCursos oc ON (c.id_curso = oc.id_curso)",
+                                             " LEFT JOIN Objetivos o ON(oc.id_objetivo = o.id_objetivo)",
+                                             " WHERE c.borrado = 0  AND  ");
+
+            if (parametros.ContainsKey("id_curso"))
+                strSql += " AND (c.id_curso=@id_curso) ";
+            if (parametros.ContainsKey("nombre_largo"))
+                strSql += " AND (nombre_largo=@nombre_largo) ";
+
+            if (parametros.ContainsKey("nombre_corto"))
+                strSql += " AND (nombre_corto=@nombre_corto) ";
+
+            if (parametros.ContainsKey("borrado"))
+                strSql += " AND (borrado=@borrado) ";
+
+
+
+
+            var resultado = (DataRowCollection)DataManager.GetInstance().ConsultaSQL(strSql, parametros).Rows;
+
+            foreach (DataRow row in resultado)
+            {
+                listObjetivo.Add(ObjectMappingPuntos(row));
+            }
+
+            return listObjetivo;
+        }
+        public IList<Objetivo> GetObjetivoByFiltersAllObjetivoCurso(Dictionary<string, object> parametros)
+        {
+            List<Objetivo> listObjetivo = new List<Objetivo>();
+
+            String strSql = string.Concat(" SELECT c.*, ",
+                                             "        o.*, ",
+                                             "        oc.puntos, ",
+
+                                             "        k.nombre as 'nombreCat'  ",
+                                             " FROM Cursos c",
+                                             " LEFT JOIN Categorias k ON (c.id_categoria = k.id_categoria) ",
+                                             " LEFT JOIN ObjetivosCursos oc ON (c.id_curso = oc.id_curso)",
+                                             " LEFT JOIN Objetivos o ON(oc.id_objetivo = o.id_objetivo)",
+                                             " WHERE c.borrado = 0  AND  ");
+
+            if (parametros.ContainsKey("id_curso"))
+                strSql += " AND (c.id_curso=@id_curso) ";
+         
+
+
 
 
             var resultado = (DataRowCollection)DataManager.GetInstance().ConsultaSQL(strSql, parametros).Rows;
@@ -207,6 +276,19 @@ namespace PROYECTO_PAV.DataAccesLayer
             return (DataManager.GetInstance().EjecutarSQL(str_sql, parametros) == 1);
         }
 
+        //internal bool ExisteObjetivo(Objetivo oObjetivo)
+        //{
+           
+        //    string str_sql = " Select * From Objetivo WHERE nombre_largo=@
+
+        //    var parametros = new Dictionary<string, object>();
+        //    parametros.Add("nombre_largo", oObjetivo.NombreLargo);
+        //    parametros.Add("nombre_corto", oObjetivo.NombreCorto);
+
+
+
+        //    return (DataManager.GetInstance().EjecutarSQL(str_sql, parametros) == 1);
+        //}
         internal bool Delete(Objetivo oObjetivo)
         {
             string str_sql = " UPDATE Objetivos " +

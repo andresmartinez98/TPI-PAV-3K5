@@ -13,6 +13,8 @@ using System.Windows.Forms;
 
 namespace PROYECTO_PAV.GUILayer
 {
+    // FALTA VALIDAR EN EL DATA QUE NO PONGA EL MISMO OBJETIVO DOS VECES, VALIDACIONES DE LA ACTUALIZACION --- no elimina mas de un curso a la vez
+
     public partial class frmAMBCCurso : Form
     {  
         
@@ -22,6 +24,8 @@ namespace PROYECTO_PAV.GUILayer
         private Curso oCursoSelected;
         private readonly ObjetivoService oObjetivoService;
         private  BindingList<Objetivo> listaObjetivos;
+        private BindingList<Objetivo> listaObjetivosOriginal;
+        private BindingList<Objetivo> listaObjetivoseliminar;
 
 
         public frmAMBCCurso()
@@ -31,7 +35,8 @@ namespace PROYECTO_PAV.GUILayer
             oCategoriaService = new CategoriaService();
             oObjetivoService = new ObjetivoService();
             listaObjetivos = new BindingList<Objetivo>();
-
+            listaObjetivosOriginal = new BindingList<Objetivo>();
+            listaObjetivoseliminar = new BindingList<Objetivo>();
             InitializeDataGridView();
             
         }
@@ -111,8 +116,25 @@ namespace PROYECTO_PAV.GUILayer
 
                         parametros.Add("id_curso", oCursoSelected.IdCurso.ToString());
 
-                        IList<Objetivo> listaObjetivos = oObjetivoService.ConsultarObjetivoConFiltros(parametros);
+                        IList<Objetivo> listaObjetivoss = oObjetivoService.ConsultarObjetivoConFiltros(parametros);
+                        listaObjetivosOriginal.Clear();
+                        
+                        
+                         foreach (var objs in listaObjetivoss)
+                        {
+                            var obj = new Objetivo();
 
+
+                            obj.NombreCorto = objs.NombreCorto;
+                            obj.NombreLargo = objs.NombreLargo;
+                            obj.Puntos = objs.Puntos;
+                            obj.IdObjetivo = objs.IdObjetivo;
+                            listaObjetivos.Add(obj);
+                            listaObjetivosOriginal.Add(obj);
+
+                        }
+                    
+                        
 
 
                         dgvObjetivos.DataSource = listaObjetivos;
@@ -179,16 +201,16 @@ namespace PROYECTO_PAV.GUILayer
                             {
                                 var oCurso = new Curso();
                                 oCurso.Nombre = txtNombre.Text;
-                                oCurso.Descripcion = txtDescripcion.Text;                               
+                                oCurso.Descripcion = txtDescripcion.Text;
                                 oCurso.FechaVigencia = Convert.ToDateTime((txtFecha.Text));
-                                
+
                                 oCurso.Categoria = new Categoria();
                                 oCurso.Categoria.IdCategoria = (int)cmbCategoria.SelectedValue;
 
                                 oCurso.Objetivo = new List<Objetivo>();
                                 oCurso.Objetivo = listaObjetivos;
-                              
-                                
+
+
 
                                 if (oCursoService.CrearCurso(oCurso))
                                 {
@@ -201,34 +223,109 @@ namespace PROYECTO_PAV.GUILayer
                             MessageBox.Show("Nombre de Curso encontrado. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     }
-                
+
                 case FormMode.actualizar:
 
                     {
-                       
+                        List<Objetivo> resultado = new List<Objetivo>();
+                        BindingList<Objetivo> listaObjetivosAgregar = new BindingList<Objetivo>();
+                        BindingList<Objetivo> listaObjetivosEliminarVar = new BindingList<Objetivo>();
+                        listaObjetivosAgregar = listaObjetivos;
+
+                        var obj = new Objetivo();
 
 
+                        // FALTA VER COMO HACER PARA QUE AGREGUE UN nuevo objetivo que ya lo tenia. LISTO
 
 
-                        if (ValidarCampos())
-                        {                           
-                            oCursoSelected.Nombre = txtNombre.Text;
-                            oCursoSelected.Descripcion = txtDescripcion.Text;
-                            oCursoSelected.FechaVigencia =Convert.ToDateTime(txtFecha.Text);
-                            oCursoSelected.Categoria = new Categoria();
-                            oCursoSelected.Categoria.IdCategoria = (int)cmbCategoria.SelectedValue;
-                            oCursoSelected.Objetivo = new List<Objetivo>();
-                            oCursoSelected.Objetivo = listaObjetivos;
+                        for (int i = 0; i < listaObjetivos.Count(); i++)
+                        {
 
-                            if (oCursoService.ActualizarCurso(oCursoSelected))
+                            for (int j = 0; j < listaObjetivosOriginal.Count(); j++)
                             {
-                                MessageBox.Show("¡Curso actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Dispose();
+                                if (listaObjetivos.Contains(listaObjetivosOriginal.ElementAt(j)))
+                                {
+                                    //lista en grilla
+                                    listaObjetivosAgregar.Remove(listaObjetivos.ElementAt(i));
+
+                                    //lista original
+                                    //listaObjetivoseliminar.Remove(listaObjetivosOriginal.ElementAt(j));
+                                   
+                                }
+                                if (listaObjetivoseliminar.Contains(listaObjetivosOriginal.ElementAt(j)))
+
+                                {
+                                    listaObjetivosEliminarVar.Add(listaObjetivosOriginal.ElementAt(j));
+                                    //HASTA ACA LLEGUE GENERAR METODO DE ELIMINACION DE CURSOS POR OBJETIVO
+                                    oCursoSelected.Nombre = txtNombre.Text;
+                                    oCursoSelected.Descripcion = txtDescripcion.Text;
+                                    oCursoSelected.FechaVigencia = Convert.ToDateTime(txtFecha.Text);
+                                    oCursoSelected.Categoria = new Categoria();
+                                    oCursoSelected.Categoria.IdCategoria = (int)cmbCategoria.SelectedValue;
+
+                                    oCursoSelected.Objetivo = new BindingList<Objetivo>();
+                                    oCursoSelected.Objetivo = listaObjetivosEliminarVar;
+                                    oCursoService.EliminarCursoObjetivo(oCursoSelected);
+                                    listaObjetivosEliminarVar.Clear();
+                                }
+
                             }
-                            else
-                                MessageBox.Show("Error al actualizar el Curso", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+
+                        BindingList<Objetivo> listaObjetivosAgregarFinal = new BindingList<Objetivo>();
+                        listaObjetivosAgregarFinal = listaObjetivosAgregar;
+                        int k = listaObjetivosAgregar.Count();
+                        BindingList<Objetivo> listaObjetivosAgregarFinal2 = new BindingList<Objetivo>();
+
+                        for (int f= 0; f<k;f++)
+                        {
+                            var item = listaObjetivosAgregar.ElementAt(f);
+                            //oCursoSelected.Nombre = txtNombre.Text;
+                            //oCursoSelected.Descripcion = txtDescripcion.Text;
+                            //oCursoSelected.FechaVigencia = Convert.ToDateTime(txtFecha.Text);
+                            //oCursoSelected.Categoria = new Categoria();
+                            //oCursoSelected.Categoria.IdCategoria = (int)cmbCategoria.SelectedValue;
+
+                            //oCursoSelected.Objetivo = new List<Objetivo>();
+                            //oCursoSelected.Objetivo = listaObjetivosAgregarFinal;
+
+
+                            if (oCursoService.Existe(oCursoSelected, item))
+                            {
+                                oCursoSelected.Objetivo = new List<Objetivo>();
+                                oCursoSelected.Objetivo = listaObjetivosAgregarFinal;
+                                oCursoService.ModificarDelete(oCursoSelected,item);
+                                
+
+
+
+                            } else
+                            {
+                                listaObjetivosAgregarFinal2.Add(item);
+                            }
+
+                        }
+                        oCursoSelected.Nombre = txtNombre.Text;
+                        oCursoSelected.Descripcion = txtDescripcion.Text;
+                        oCursoSelected.FechaVigencia = Convert.ToDateTime(txtFecha.Text);
+                        oCursoSelected.Categoria = new Categoria();
+                        oCursoSelected.Categoria.IdCategoria = (int)cmbCategoria.SelectedValue;
+
+                        oCursoSelected.Objetivo = new List<Objetivo>();
+                        oCursoSelected.Objetivo = listaObjetivosAgregarFinal2;
                         
+
+                      
+
+
+                        if (oCursoService.ActualizarCursos(oCursoSelected))
+                                {
+                                    MessageBox.Show("¡Curso actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Dispose();
+                                }
+                                else
+                                    MessageBox.Show("Error al actualizar el Curso", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         break;
                     }
             
@@ -237,7 +334,7 @@ namespace PROYECTO_PAV.GUILayer
                         if (MessageBox.Show("¿Seguro que desea eliminar el Curso seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                         {
 
-                            if (oCursoService.EliminarCurso(oCursoSelected))
+                            if (oCursoService.EliminarCurso(oCursoSelected)) //REPARAR ESTE
                             {
                                 MessageBox.Show("¡Curso eliminado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
@@ -333,41 +430,53 @@ namespace PROYECTO_PAV.GUILayer
 
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
-
-
-
-
         }
 
         private void dgvObjetivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (ValidarCampos())
             {
-                int cantidad = 0;
-                int.TryParse(txtAgregar.Text, out cantidad);
 
-                var obj = (Objetivo)cmbObjetivo.SelectedItem;
-                listaObjetivos.Add(new Objetivo()
+
+                if (txtAgregar.Text != "")
                 {
-                    NombreCorto = obj.NombreCorto,
-                    NombreLargo = obj.NombreLargo,
-                    Puntos = cantidad,
-                    IdObjetivo = obj.IdObjetivo
 
-                });
+                    int cantidad = 0;
+                    int.TryParse(txtAgregar.Text, out cantidad);
+
+                    var obj = (Objetivo)cmbObjetivo.SelectedItem;
+
+
+                    listaObjetivos.Add(new Objetivo()
+                    {
+                        NombreCorto = obj.NombreCorto,
+                        NombreLargo = obj.NombreLargo,
+                        Puntos = cantidad,
+                        IdObjetivo = obj.IdObjetivo
+
+                    });
+
+                }
+                else
+                {
+                    MessageBox.Show("Debe Ingresar Puntos del Objetivo", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            
+                }
+                
+
             }
-
-    
-
-            //InicializarDetalle();
-
         }
+       //InicializarDetalle();
+
+        
+
+   
 
         private void cmbObjetivo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -391,10 +500,18 @@ namespace PROYECTO_PAV.GUILayer
         }
         private void _btnQuitar_Click(object sender, EventArgs e)
         {
-            if (dgvObjetivos.CurrentRow != null)
+            if (dgvObjetivos.CurrentRow !=null)
             {
                 var obj = (Objetivo)dgvObjetivos.CurrentRow.DataBoundItem;
                 listaObjetivos.Remove(obj);
+                
+                listaObjetivoseliminar.Add(obj);
+            }
+            
+            
+            else  //VER COMO HACER PARA que el mismo quede al menos un solo objetivo
+            {
+                MessageBox.Show("Al menos debe tener un objetivo", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -411,10 +528,6 @@ namespace PROYECTO_PAV.GUILayer
             LlenarCombo(cmbObjetivo, oObjetivoService.ObtenerTodos(), "Nombre", "NombreLargo");
         }
 
-      
-        
-            
-        
         private void gpbObjetivos_Enter(object sender, EventArgs e)
         {
 

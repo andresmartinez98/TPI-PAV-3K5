@@ -1,4 +1,5 @@
 ﻿using PROYECTO_PAV.GUILayer;
+using PROYECTO_PAV.GUILayer.Reportes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace PROYECTO_PAV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            Application.Run(new frmLogin());
         }
     }
 }

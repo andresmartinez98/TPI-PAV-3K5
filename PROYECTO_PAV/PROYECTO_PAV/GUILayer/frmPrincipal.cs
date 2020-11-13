@@ -1,4 +1,5 @@
 ﻿using PROYECTO_PAV.GUILayer;
+using PROYECTO_PAV.GUILayer.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,9 +27,8 @@ namespace PROYECTO_PAV
         private void Principal_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
-           
+            //frmLogin login = new frmLogin();
+            //login.ShowDialog();
 
         }
 
@@ -48,6 +48,37 @@ namespace PROYECTO_PAV
         {
             FormGestionObjetivos frmObjetivo = new FormGestionObjetivos();
             frmObjetivo.ShowDialog();
+        }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void actualizacionCursoUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCursoUsuario frmObjetivo = new frmCursoUsuario();
+            frmObjetivo.ShowDialog();
+        }
+
+        private void usuariosPorCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteUsuarioPorCurso Reporte = new ReporteUsuarioPorCurso();
+            Reporte.ShowDialog();
+        }
+
+        private void objetivosDeCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmObjetivoPorCursos Reporte = new frmObjetivoPorCursos();
+            Reporte.ShowDialog();
+        }
+
+        private void cursosPorUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmCursosxUsuarios Reporte = new frmCursosxUsuarios();
+            Reporte.ShowDialog();
         }
     }
 }

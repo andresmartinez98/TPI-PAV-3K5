@@ -49,6 +49,7 @@
             this.lblObjetivo = new System.Windows.Forms.Label();
             this.btnAgregarObj = new System.Windows.Forms.Button();
             this.gpbObjetivos = new System.Windows.Forms.GroupBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).BeginInit();
             this.gpbObjetivos.SuspendLayout();
             this.SuspendLayout();
@@ -245,5 +246,6 @@
         private System.Windows.Forms.Label lblObjetivo;
         private System.Windows.Forms.Button btnAgregarObj;
         private System.Windows.Forms.GroupBox gpbObjetivos;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
